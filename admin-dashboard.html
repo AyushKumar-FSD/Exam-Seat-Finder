@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="data.js"></script>
+</head>
+<body>
+  <header><img src="n.jpg"><h2>NMAM Institute of Technology</h2></header>
+
+  <div class="box">
+    <h3>📋 Admin Dashboard</h3>
+    <input type="text" id="search" class="form-control mb-3" placeholder="Search by USN or name..." onkeyup="searchStudent()">
+    <div id="searchResult"></div>
+    <button class="btn btn-danger mt-3" onclick="logout()">Logout</button>
+  </div>
+
+  <footer>© 2025 NMAM  Institute of Technology</footer>
+
+  <script>
+    if (!localStorage.getItem("loggedAdmin")) window.location.href = "admin-login.html";
+
+    function searchStudent() {
+      const query = document.getElementById("search").value.trim().toUpperCase();
+      const div = document.getElementById("searchResult");
+
+      if (query === "") { div.style.display = "none"; return; }
+
+      const found = Object.entries(students).find(([usn, s]) =>
+        usn.includes(query) || s.name.toUpperCase().includes(query)
+      );
+
+      if (found) {
+        const [usn, s] = found;
+        div.style.display = "block";
+        div.style.backgroundColor = "#d1e7dd";
+        div.innerHTML = `
+          <h6>${s.name}</h6>
+          <p>USN: <strong>${usn}</strong></p>
+          <p>Hall: <strong>${s.hall}</strong></p>
+          <p>Block: <strong>${s.block}</strong></p>
+          <p>Seat: <strong>${s.seat}</strong></p>
+        `;
+      } else {
+        div.style.display = "block";
+        div.style.backgroundColor = "#f8d7da";
+        div.innerHTML = "<strong>No student found!</strong>";
+      }
+    }
+
+    function logout() {
+      localStorage.removeItem("loggedAdmin");
+      window.location.href = "admin-login.html";
+    }
+  </script>
+</body>
+</html>

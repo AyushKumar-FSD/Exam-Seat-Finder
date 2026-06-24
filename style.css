@@ -1,0 +1,199 @@
+/* ==============================================
+   COMMON STYLES FOR ALL PAGES
+   ============================================== */
+
+body {
+  background-color: #f8f9fa;
+  color: #212529;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* ==============================================
+   HEADER AND FOOTER
+   ============================================== */
+header,
+footer {
+  width: 100%;
+  background-color: #e9ecef;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  left: 0;
+  z-index: 10;
+}
+
+header {
+  top: 0;
+  border-bottom: 1px solid #dee2e6;
+}
+
+footer {
+  bottom: 0;
+  border-top: 1px solid #dee2e6;
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+header img {
+  height: 50px;
+  margin-right: 10px;
+}
+
+header h2 {
+  display: inline-block;
+  vertical-align: middle;
+  color: #0d6efd;
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+/* ==============================================
+   MAIN BOX DESIGN
+   ============================================== */
+.box {
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  width: 100%;
+  max-width: 450px;
+  margin: 120px auto 80px auto;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.box:hover {
+  box-shadow: 0 8px 20px rgba(13, 110, 253, 0.3);
+  transform: translateY(-5px);
+}
+
+/* ==============================================
+   BUTTONS
+   ============================================== */
+.btn-custom {
+  background-color: #0d6efd;
+  color: #fff;
+  border: none;
+  width: 100%;
+  height: 45px;
+  border-radius: 10px;
+  font-size: 14px;
+  padding: 6px 12px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-custom:hover {
+  background-color: #0b5ed7;
+  box-shadow: 0 8px 20px rgba(13, 110, 253, 0.3);
+  transform: translateY(-3px);
+}
+
+.btn-danger {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.btn-danger:hover {
+  box-shadow: 0 8px 20px rgba(220, 53, 69, 0.3);
+  transform: translateY(-3px);
+}
+
+/* ==============================================
+   INPUT FIELDS
+   ============================================== */
+input {
+  text-align: center;
+  border-radius: 8px !important;
+}
+
+input:focus {
+  border-color: #0d6efd !important;
+  box-shadow: 0 0 5px rgba(13, 110, 253, 0.5) !important;
+}
+
+/* ==============================================
+   RESULT & SEARCH BOXES
+   ============================================== */
+#result,
+#searchResult {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  display: none;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+#result:hover,
+#searchResult:hover {
+  box-shadow: 0 6px 15px rgba(25, 135, 84, 0.3);
+  transform: translateY(-3px);
+}
+
+/* ==============================================
+   CONTAINER (Home Page)
+   ============================================== */
+.container {
+  margin-top: 120px;
+}
+
+.container h3 {
+  color: #0d6efd;
+  font-weight: bold;
+}
+
+/* ==============================================
+   HOME PAGE BUTTONS
+   ============================================== */
+.btn-choice {
+  background-color: #0d6efd;
+  color: #fff;
+  border: none;
+  margin: 15px;
+  width: 200px;
+  height: 50px;
+  border-radius: 10px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.btn-choice:hover {
+  box-shadow: 0 8px 20px rgba(13, 110, 253, 0.3);
+  transform: translateY(-4px);
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  border: none;
+  color: white;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+  box-shadow: 0 6px 15px rgba(108, 117, 125, 0.3);
+  transform: translateY(-3px);
+}
+
+/* ==============================================
+   FIX FOR FIXED HEADER & FOOTER
+   ============================================== */
+main {
+  padding-top: 80px;
+  padding-bottom: 60px;
+}
+
+/* ==============================================
+   MOBILE RESPONSIVE
+   ============================================== */
+@media (max-width: 576px) {
+  .box {
+    margin: 100px 15px 80px 15px;
+    padding: 20px;
+  }
+
+  header h2 {
+    font-size: 1.1rem;
+  }
+}
